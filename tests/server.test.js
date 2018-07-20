@@ -173,3 +173,33 @@ const PASSWORD = "C@raline";
 			});
 		});
 	});
+// Channel Destroy
+	test("Channel destroy: success", (done) => {
+		let server = new Server(1001);
+
+		server.listen();
+		server.server.on('connection', (sock) => {
+			client.emit('create-channel', { name: "Random Channel" }, PASSWORD);
+			client.on('channel-created', (chan) => {
+				client.emit('destroy-channel');
+				client.on('channel-destroyed', async (id) => {
+					if(id !== chan) throw "Channels don't match";
+					if(server.channels[id]) throw "Channel not destroyed successfully";
+
+					client.disconnect();
+					await server.close();
+					done();
+				});
+			});
+
+			client.on('cannot-create-channel', () => {
+				throw "Incorrect Password";
+			});
+		});
+
+		let client = Client.connect('http://localhost:1001', { reconnect: true });
+	});
+// Message Sending
+	test("Client sends message to Master: sucess", (done) => {
+		
+	})
