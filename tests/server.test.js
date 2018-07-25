@@ -9,7 +9,7 @@ const CONFIG = { password: "C0ral1n3" };
 
 io.listen(8000);
 
-let server = Server.create(io, CONFIG);
+let server = Server(io, CONFIG);
 
 // Authentication
 	// Create
