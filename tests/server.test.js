@@ -1,205 +1,493 @@
-let Server = require('../server');
-let Client = require('socket.io-client');
-const PASSWORD = "C@raline";
+const Server = require('../lib/server');
+const io = require('socket.io')();
+const Client = require('socket.io-client');
 
-// Server Works
-	test("Server connections work", (done) => {
-		let server = new Server(1001);
+const URL = 'http://localhost:8000';
 
-		server.listen();
-		server.server.on('connection', async () => {
-			client.disconnect();
-			await server.close();
-			done();
+const PASSWORD = 'C0ral1n3';
+const CONFIG = { password: "C0ral1n3" };
+
+io.listen(8000);
+
+let server = Server.create(io, CONFIG);
+
+// Authentication
+	// Create
+		test('/create: INVALID_PASSWORD', (done) => {
+			let client = Client(URL);
+			client.emit('create', 'bad_password');
+
+			client.once('create-failed', (reason) => {
+				if(reason === "INVALID_PASSWORD") {
+					client.destroy();
+					return done();
+				}
+
+				client.destroy();
+				throw "Incorrect Reason: " + reason;
+			});
+
+			client.once('create-success', (id) => {
+				client.destroy();
+				throw "Logged In...";
+			});
 		});
 
-		let client = Client.connect('http://localhost:1001', { reconnect: true });
-	});
-// Channel Creation
-	test("Channel creation fails", (done) => {
-		let server = new Server(1001);
+		test('/create: INVALID_CONFIG', (done) => {
+			let client = Client(URL);
+			client.emit('create', PASSWORD, 'String');
 
-		server.listen();
-		server.server.on('connection', (sock) => {
-			client.emit('create-channel', { name: "Random Channel" }, "wrong-pass");
+			client.once('create-failed', (reason) => {
+				if(reason === "INVALID_CONFIG") {
+					client.destroy();
+					return done();
+				}
+
+				client.destroy();
+				throw "Incorrect Reason: " + reason;
+			});
+
+			client.once('create-success', (id) => {
+				client.destroy();
+				throw "Logged In...";
+			});
 		});
 
-		let client = Client.connect('http://localhost:1001', { reconnect: true });
+		test('/create: OK', (done) => {
+			let client = Client(URL);
+			client.emit('create', PASSWORD, CONFIG);
 
+			client.once('create-failed', (reason) => {
+				client.destroy();
+				throw reason;
+			});
 
-		client.on('channel-created', (chan) => {
-			throw "Connected without correct credentials.";
-		});
-		
-		client.on('cannot-create-channel', async () => {
-			client.disconnect();
-			await server.close();
-			done();
-		});
-	});
-
-	test("Channel creation success", (done, err) => {
-		let server = new Server(1001);
-
-		server.listen();
-		server.server.on('connection', (sock) => {
-			client.emit('create-channel', { name: "Random Channel" }, PASSWORD);
-			client.on('channel-created', async (chan) => {
-				client.disconnect();
-				await server.close();
+			client.once('create-success', (id) => {
+				client.destroy();
 				done();
 			});
+		});
+	// Login
+		test('/login: INVALID_CORALINE', (done) => {
+			let foo = Client(URL);
 
-			client.on('cannot-create-channel', () => {
-				throw "Incorrect Password"
+			foo.emit('login', 7777, 'bad_password');
+			foo.on('login-failed', (reason) => {
+				foo.destroy();
+
+				if(reason !== 'INVALID_CORALINE')
+					throw "Invalid Reason: " + reason;
+				else
+					done();
 			});
 		});
 
-		let client = Client.connect('http://localhost:1001', { reconnect: true });
+		test('/login: INVALID_PASSWORD', (done) => {
+			let foo = Client(URL);
+			let bar = Client(URL);
+			bar.emit('create', PASSWORD, CONFIG);
 
-	});
-// Channel Join
-	test("Channel join: channel not found", (done) => {
-		let server = new Server(1001);
+			bar.once('create-failed', (reason) => {
+				foo.destroy();
+				bar.destroy();
+				throw "Cannot create Coraline: " + reason;
+			});
 
-		server.listen();
-		server.server.on('connection', (sock) => {
-			foo.emit('join-channel', "????");
-		});
+			bar.once('create-success', (coraline) => {
+				foo.emit('login', coraline.id, 'bad_password');
 
-		let foo = Client.connect('http://localhost:1001', { reconnect: true });
+				foo.on('login-failed', (reason) => {
+					foo.destroy();
+					bar.destroy();
 
-		foo.on('invalid-channel', async () => {
-			foo.disconnect();
-			await server.close();
-			done();
-		});
-	});
-
-	test("Channel join: wrong password", (done) => {
-		let server = new Server(1001);
-
-		server.listen();
-		server.server.on('connection', (sock) => {
-
-			client.emit('create-channel', { name: "Random Channel", password: "R@ndom" }, PASSWORD);
-
-			client.on('channel-created', (chan) => {
-				foo.emit('join-channel', chan, "wrong-pass");
+					if(reason !== 'INVALID_PASSWORD')
+						throw "Invalid Reason: " + reason;
+					else
+						done();
+				});
 			});
 		});
 
-		let client = Client.connect('http://localhost:1001', { reconnect: true });
-		let foo = Client.connect('http://localhost:1001', { reconnect: true });
+		test('/login: CORALINE_FULL', (done) => {
+			let foo = Client(URL);
+			let bar = Client(URL);
 
-		foo.on('incorrect-channel-password', async () => {
-			foo.disconnect();
-			await server.close();
-			done();
-		});
-	});
+			bar.emit('create', PASSWORD, { password: CONFIG.password, max_clients: 0 });
 
-	test("Channel join: full channel", (done) => {
-		let server = new Server(1001);
+			bar.once('create-failed', (reason) => {
+				foo.destroy();
+				bar.destroy();
+				throw "Cannot create Coraline: " + reason;
+			});
 
-		server.listen();
-		server.server.on('connection', (sock) => {
+			bar.once('create-success', (coraline) => {
+				foo.emit('login', coraline.id, CONFIG.password);
 
-			client.emit('create-channel', { name: "Random Channel", password: "R@ndom", max_clients: 0 }, PASSWORD);
+				foo.on('login-failed', (reason) => {
+					foo.destroy();
+					bar.destroy();
 
-			client.on('channel-created', (chan) => {
-				foo.emit('join-channel', chan, "R@ndom");
+					if(reason !== 'CORALINE_FULL')
+						throw "Invalid Reason: " + reason;
+					else
+						done();
+				});
 			});
 		});
 
-		let client = Client.connect('http://localhost:1001', { reconnect: true });
-		let foo = Client.connect('http://localhost:1001', { reconnect: true });
-
-		foo.on('channel-full', async () => {
-			foo.disconnect();
-			await server.close();
-			done();
-		});
-
-		foo.on('channel-join-success', () => { throw "Connected successfully"; });
-	});
-
-	test("Channel join: success", (done) => {
-		let server = new Server(1001);
-
-		server.listen();
-		server.server.on('connection', (sock) => {
-
-			client.emit('create-channel', { name: "Random Channel", password: "R@ndom" }, PASSWORD);
-
-			client.on('channel-created', (chan) => {
-				foo.emit('join-channel', chan, "R@ndom");
-			});
-		});
-
-		let client = Client.connect('http://localhost:1001', { reconnect: true });
-		let foo = Client.connect('http://localhost:1001', { reconnect: true });
-
-		foo.on('channel-join-success', async () => {
-			foo.disconnect();
-			await server.close();
-			done();
-		});
-	});
-
-	test("Channel join: has client", (done) => {
-		let server = new Server(1001);
-
-		server.listen();
-		server.server.on('connection', (sock) => {
-
-			client.emit('create-channel', { name: "Random Channel", password: "R@ndom" }, PASSWORD);
-
-			client.on('channel-created', (chan) => {
-				foo.emit('join-channel', chan, "R@ndom");
-			});
-		});
-
-		let client = Client.connect('http://localhost:1001', { reconnect: true });
-		let foo = Client.connect('http://localhost:1001', { reconnect: true });
-
-		foo.on('channel-join-success', (chan) => {
-			foo.emit('join-channel', chan, "R@ndom");
+		test('/login: OK', (done) => {
+			let foo = Client(URL);
+			let bar = Client(URL);
 			
-			foo.on('channel-has-client', async () => {
-				foo.disconnect();
-				await server.close();
-				done();
+			bar.emit('create', PASSWORD, CONFIG);
+
+			bar.once('create-failed', (reason) => {
+				foo.destroy();
+				bar.destroy();
+				throw "Cannot create Coraline: " + reason;
+			});
+
+			bar.once('create-success', (coraline) => {
+				foo.emit('login', coraline.id, CONFIG.password);
+
+				foo.on('login-failed', (reason) => {
+					foo.destroy();
+					bar.destroy();
+					
+					throw reason;
+				});
+
+				foo.on('login-success', (client_id, coraline) => {
+					foo.destroy();
+					bar.destroy();
+					
+					done();
+				});
 			});
 		});
-	});
-// Channel Destroy
-	test("Channel destroy: success", (done) => {
-		let server = new Server(1001);
+	// Destroy
+		test('/destroy: CORALINE_NOT_FOUND', (done) => {
+			let client = Client(URL);
+			client.emit('destroy', 7777);
 
-		server.listen();
-		server.server.on('connection', (sock) => {
-			client.emit('create-channel', { name: "Random Channel" }, PASSWORD);
-			client.on('channel-created', (chan) => {
-				client.emit('destroy-channel');
-				client.on('channel-destroyed', async (id) => {
-					if(id !== chan) throw "Channels don't match";
-					if(server.channels[id]) throw "Channel not destroyed successfully";
+			client.once('destroy-failed', (reason) => {
+				client.destroy();
 
-					client.disconnect();
-					await server.close();
+				if(reason !== 'CORALINE_NOT_FOUND') throw 'Invalid Reason: ' + reason;
+
+				done();
+			})
+
+			client.once('destroy-success', () => {
+				client.destroy();
+				throw "Coraline was destroyed...";
+			});
+		});
+
+
+		test('/destroy: OK', (done) => {
+			let client = Client(URL);
+			client.emit('create', PASSWORD, CONFIG);
+
+			client.once('create-failed', (reason) => {
+				client.destroy();
+				throw reason;
+			});
+
+			client.once('create-success', (coraline) => {
+				let passed = false;
+				client.emit('destroy');
+
+				client.once('destroy-failed', (reason) => {
+					if(passed) return;
+					client.destroy();
+
+					throw reason;
+				});
+
+				client.once('destroy-success', () => {
+					passed = true;
+					client.emit('destroy');
+
+					client.once('destroy-failed', (reason) => {
+						client.destroy();
+
+						if(reason !== 'CORALINE_NOT_FOUND') throw 'Invalid Reason: ' + reason;
+
+						done();
+					})
+
+					client.once('destroy-success', () => {
+						throw "Coraline was destroyed...";
+					});
+				});
+			});
+		});
+// Messages
+	// Messages
+		// Server to Client: /message-to
+			test('/message-to: NOT_A_MASTER', (done) => {
+				let foo = Client(URL);
+
+				foo.emit('message-to', 0, 'some_command', 'some_data');
+
+				foo.once('message-to-failed', (reason) => {
+					foo.destroy();
+
+					if(reason !== 'NOT_A_MASTER') throw 'Invalid reason: ' + reason;
+
 					done();
 				});
 			});
 
-			client.on('cannot-create-channel', () => {
-				throw "Incorrect Password";
+			test('/message-to: INVALID_TARGET', async (done) => {
+				let foo = Client(URL);
+				let coraline = await CreateCoraline(foo, CONFIG);
+
+				foo.emit('message-to', 0, 'some_command', 'some_data');
+
+				foo.once('message-to-failed', (reason) => {
+					foo.destroy();
+
+					if(reason !== 'INVALID_TARGET') throw 'Invalid reason: ' + reason;
+
+					done();
+				});
+			});
+
+			test('/message-to: OK', async (done) => {
+				let foo = Client(URL);
+				let bar = Client(URL);
+
+				let coraline = await CreateCoraline(foo, CONFIG);
+				let [ client_id ] = await LoginClient(bar, coraline.id, PASSWORD);
+
+				foo.emit('message-to', client_id, 'some_command', 'some_data');
+				foo.once('message-to-failed', (reason) => {
+					Clean(foo, bar);
+					throw reason;
+				});
+
+				bar.once('message', (command, data) => {
+					Clean(foo, bar);
+
+					if(command !== 'some_command') throw "Invalid command received: " + command;
+					if(data !== 'some_data') throw "Invalid data received: " + command;
+
+					done();
+				});
+			});
+		// Client to Server: /message
+			test('/message: NOT_A_CLIENT', (done) => {
+				let foo = Client(URL);
+
+				foo.emit('message', 0, 'some_command', 'some_data');
+
+				foo.once('message-failed', (reason) => {
+					foo.destroy();
+
+					if(reason !== 'NOT_A_CLIENT') throw 'Invalid reason: ' + reason;
+
+					done();
+				});
+			});
+
+			test('/message: OK', async (done) => {
+				let foo = Client(URL);
+				let bar = Client(URL);
+
+				let coraline = await CreateCoraline(foo, CONFIG);
+				let [ client_id ] = await LoginClient(bar, coraline.id, PASSWORD);
+
+				bar.emit('message', 'some_command', 'some_data');
+				bar.once('message-failed', (reason) => {
+					Clean(foo, bar);
+					throw reason;
+				});
+
+				foo.once('message', (src, command, data) => {
+					Clean(foo, bar);
+
+					if(src !== client_id) throw "Incorrect ID: " + src + ", client_id: " + client_id;
+					if(command !== 'some_command') throw "Invalid command received: " + command;
+					if(data !== 'some_data') throw "Invalid data received: " + command;
+
+					done();
+				});
+			});
+	// Queries
+		// Server to client: /query-to
+			test('/query-to: OK', async (done) => {
+				let server = Client(URL);
+				let client = Client(URL);
+
+				let coraline = await CreateCoraline(server, CONFIG);
+				let [ client_id ] = await LoginClient(client, coraline.id, PASSWORD);
+
+
+				const IID = 5767;
+
+				server.emit('query-to', client_id, IID, 'multiply', 2, 3);
+				server.once('query-to-failed', (err) => {
+					Clean(server, client);
+
+					throw err;
+				});
+
+				client.once('resolve-failed', (err) => {
+					Clean(server, client);
+
+					throw err;
+				});
+				
+				client.once('query', (iid, cmd, n1, n2) => {
+					if(iid !== IID) {
+						Clean(server, client);
+						throw "Invalid IID: " + iid + ", IID: " + IID;
+					}
+					
+					if(cmd !== 'multiply') {
+						Clean(server, client);
+						throw "Invalid Command: " + cmd + ", expected: multiply";
+					}
+
+					let response = n1 * n2;
+
+					if(response !== 6) {
+						Clean(server, client);
+						throw `Corrupted Data: (${n1} * ${n2}) !== 6`;	
+					}
+
+					client.emit('resolve', iid, response);
+				});
+
+				server.once('resolve', (cli_id, iid, res) => {
+					if(cli_id !== client_id) {
+						Clean(server, client);
+						throw "Invalid response client_id: " + cli_id + ", client_id: " + client_id;
+					}
+
+					if(iid !== IID) {
+						Clean(server, client);
+						throw "Invalid IID: " + iid + ", IID: " + IID;
+					}
+
+
+					if(res !== 6) {
+						Clean(server, client);
+						throw `Corrupted response data: ${res} !== 6`;	
+					}
+
+					done();
+				});
+			});
+		// Client to Server: /query
+			test('/query: OK', async (done) => {
+				let server = Client(URL);
+				let client = Client(URL);
+
+				let coraline = await CreateCoraline(server, CONFIG);
+				let [ client_id ] = await LoginClient(client, coraline.id, PASSWORD);
+
+
+				const IID = 5767;
+
+				client.emit('query', IID, 'multiply', 2, 3);
+				client.once('query-failed', (err) => {
+					Clean(server, client);
+
+					throw err;
+				});
+
+				server.once('resolve-to-failed', (err) => {
+					Clean(server, client);
+
+					throw err;
+				});
+				
+				server.once('query', (id, iid, cmd, n1, n2) => {
+					if(id !== client_id) {
+						Clean(server, client);
+						throw "Invalid client_id: " + id + ", client_id: " + client_id;
+					}
+
+					if(iid !== IID) {
+						Clean(server, client);
+						throw "Invalid IID: " + iid + ", IID: " + IID;
+					}
+					
+					if(cmd !== 'multiply') {
+						Clean(server, client);
+						throw "Invalid Command: " + cmd + ", expected: multiply";
+					}
+
+					let response = n1 * n2;
+
+					if(response !== 6) {
+						Clean(server, client);
+						throw `Corrupted Data: (${n1} * ${n2}) !== 6`;	
+					}
+
+					server.emit('resolve-to', id, iid, response);
+				});
+
+				client.once('resolve', (iid, res) => {
+					if(iid !== IID) {
+						Clean(server, client);
+						throw "Invalid IID: " + iid + ", IID: " + IID;
+					}
+
+
+					if(res !== 6) {
+						Clean(server, client);
+						throw `Corrupted response data: ${res} !== 6`;	
+					}
+
+					done();
+				});
+
+			});
+	// Broadcasting
+		test('/broadcast: OK', async (done) => {
+			let foo = Client(URL);
+			let bar = Client(URL);
+
+			let coraline = await CreateCoraline(foo, CONFIG);
+			let [ client_id ] = await LoginClient(bar, coraline.id, PASSWORD);
+
+			foo.emit('broadcast', 'some_command', 'some_data');
+			foo.once('broadcast-failed', (reason) => {
+				Clean(foo, bar);
+				throw reason;
+			});
+
+			bar.once('message', (command, data) => {
+				Clean(foo, bar);
+
+				if(command !== 'some_command') throw "Invalid command received: " + command;
+				if(data !== 'some_data') throw "Invalid data received: " + command;
+
+				done();
 			});
 		});
 
-		let client = Client.connect('http://localhost:1001', { reconnect: true });
+function CreateCoraline (client, config) {
+	return new Promise ((done, err) => {
+		client.emit('create', PASSWORD, config);
+
+		client.once('create-failed', err);
+		client.once('create-success', done);
 	});
-// Message Sending
-	test("Client sends message to Master: sucess", (done) => {
-		
-	})
+}
+
+function LoginClient (client, coraline_id, pass) {
+	return new Promise((done, err) => {
+		client.emit('login', coraline_id, pass);
+		client.once('login-failed', err);
+		client.once('login-success', (id, cora) => done([id, cora]));
+	});
+}
+
+function Clean (...sock) {
+	sock.forEach((s) => s.destroy());
+}
