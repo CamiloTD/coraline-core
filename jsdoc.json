@@ -1,0 +1,19 @@
+{
+	"plugins": [],
+	"recurseDepth": 10,
+	"source": {
+		"include": ["index.js", "lib/server.js", "lib/coraline.js", "lib/client.js"]
+	},
+
+	"opts": {
+		"encoding": "utf8",
+		"destination": "./jsdoc/",
+		"recurse": true,
+		"template": "jsdoc-template"
+	},
+
+	"templates": {
+        "referenceTitle": "Coraline-core",
+        "disableSort": false
+	}
+}
