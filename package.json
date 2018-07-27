@@ -7,15 +7,18 @@
     "test": "tests"
   },
   "dependencies": {
+    "docdash": "^0.4.0",
     "socket.io": "^2.1.1",
     "socket.io-client": "^2.1.1"
   },
   "devDependencies": {
+    "doxdox": "^2.0.3",
     "jest": "^23.4.1",
-    "doxdox": "^2.0.3"
+    "jsdoc": "^3.5.5"
   },
   "scripts": {
-    "test": "jest --forceExit"
+    "test": "jest --forceExit",
+    "generate-docs": "node_modules/.bin/jsdoc -c jsdoc.json"
   },
   "repository": {
     "type": "git",
