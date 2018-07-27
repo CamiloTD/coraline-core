@@ -10,3 +10,8 @@ With Coraline-core you can send messages between different Socket.io endpoints, 
  - [x] Create interactive lessons for educative purpose, there is also an official project for it: [Coraline-educative](https://github.com/CamiloTD/coraline-educative)
  - [x] Create interactive content for your business (Interactive screens, interactive catalogues, etc...)
  - [x] Create interactive screens for museums, and expositions
+
+**Installation:**
+```batch
+	npm install coraline-core
+```
