@@ -15,3 +15,32 @@ With Coraline-core you can send messages between different Socket.io endpoints, 
 ```batch
 	npm install coraline-core
 ```
+**Basic usage:**
+```javascript
+	const Coraline = require('coraline-core'); // Import the library
+	const io = require('socket.io')(); // Import socket.io
+	const PORT = 8000
+	
+	io.listen(PORT); // Start Socket.io Server
+
+	Coraline.createServer(io); // Configure Coraline server
+	// Done! it's all you need to start working :D
+```
+
+**Running tests:**
+
+```batch
+	npm test
+```
+
+**Generating docs:**
+
+```batch
+	npm run generate-docs
+```
+The documentation will be generated in **./jsdoc** folder
+
+**Donations:**
+```
+![Donate Bitcoin](https://img.shields.io/badge/donate-$10-orange.svg)](http://example.com/donate-bitcoin/?amount=10&currency=USD)
+```
