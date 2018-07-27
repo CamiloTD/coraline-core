@@ -41,6 +41,7 @@ With Coraline-core you can send messages between different Socket.io endpoints, 
 The documentation will be generated in **./jsdoc** folder
 
 **Donations:**
-```
-![Donate Bitcoin](https://img.shields.io/badge/donate-$10-orange.svg)](http://example.com/donate-bitcoin/?amount=10&currency=USD)
-```
+
+You can colaborate to the project by donating some pennies to this wallets, we appreciate your collaboration <3
+
+**Bitcoin:** 1GRLN4C8U7TezPLa6cLHHdfSpSF3qHNuR5
