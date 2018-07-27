@@ -5,7 +5,7 @@ const Client = require('socket.io-client');
 const URL = 'http://localhost:8000';
 
 const PASSWORD = 'C0ral1n3';
-const CONFIG = {};
+const CONFIG = { password: PASSWORD };
 
 io.listen(8000);
 
@@ -15,7 +15,7 @@ let server = Server(io, CONFIG);
 	// Create
 		test('/create: INVALID_CONFIG', (done) => {
 			let client = Client(URL);
-			client.emit('create', PASSWORD, 'String');
+			client.emit('create', 'String');
 
 			client.once('create-failed', (reason) => {
 				if(reason === "INVALID_CONFIG") {
@@ -35,7 +35,7 @@ let server = Server(io, CONFIG);
 
 		test('/create: OK', (done) => {
 			let client = Client(URL);
-			client.emit('create', PASSWORD, CONFIG);
+			client.emit('create', CONFIG);
 
 			client.once('create-failed', (reason) => {
 				client.destroy();
@@ -65,7 +65,7 @@ let server = Server(io, CONFIG);
 		test('/login: INVALID_PASSWORD', (done) => {
 			let foo = Client(URL);
 			let bar = Client(URL);
-			bar.emit('create', PASSWORD, CONFIG);
+			bar.emit('create', CONFIG);
 
 			bar.once('create-failed', (reason) => {
 				foo.destroy();
@@ -92,7 +92,7 @@ let server = Server(io, CONFIG);
 			let foo = Client(URL);
 			let bar = Client(URL);
 
-			bar.emit('create', PASSWORD, { password: CONFIG.password, max_clients: 0 });
+			bar.emit('create', { password: PASSWORD, max_clients: 0 });
 
 			bar.once('create-failed', (reason) => {
 				foo.destroy();
@@ -101,7 +101,7 @@ let server = Server(io, CONFIG);
 			});
 
 			bar.once('create-success', (coraline) => {
-				foo.emit('login', coraline.id, CONFIG.password);
+				foo.emit('login', coraline.id, PASSWORD);
 
 				foo.on('login-failed', (reason) => {
 					foo.destroy();
@@ -119,7 +119,7 @@ let server = Server(io, CONFIG);
 			let foo = Client(URL);
 			let bar = Client(URL);
 			
-			bar.emit('create', PASSWORD, CONFIG);
+			bar.emit('create', CONFIG);
 
 			bar.once('create-failed', (reason) => {
 				foo.destroy();
@@ -128,7 +128,7 @@ let server = Server(io, CONFIG);
 			});
 
 			bar.once('create-success', (coraline) => {
-				foo.emit('login', coraline.id, CONFIG.password);
+				foo.emit('login', coraline.id, PASSWORD);
 
 				foo.on('login-failed', (reason) => {
 					foo.destroy();
@@ -167,7 +167,7 @@ let server = Server(io, CONFIG);
 
 		test('/destroy: OK', (done) => {
 			let client = Client(URL);
-			client.emit('create', PASSWORD, CONFIG);
+			client.emit('create', CONFIG);
 
 			client.once('create-failed', (reason) => {
 				client.destroy();
@@ -453,7 +453,7 @@ let server = Server(io, CONFIG);
 
 function CreateCoraline (client, config) {
 	return new Promise ((done, err) => {
-		client.emit('create', PASSWORD, config);
+		client.emit('create', config);
 
 		client.once('create-failed', err);
 		client.once('create-success', done);
