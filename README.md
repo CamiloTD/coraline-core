@@ -3,6 +3,8 @@
 
 **If you are searching for the front-end client library, please look at:** [Coraline-client](https://github.com/CamiloTD/coraline-client)
 
+**API Docs:** [API Docs](https://camilotd.github.io/coraline)
+
 With Coraline-core you can send messages between different Socket.io endpoints, create rooms in front-end and connect different endpoints to it.
 
 **Things you can do with Coraline-core**
