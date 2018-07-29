@@ -1,7 +1,7 @@
 # coraline-core
 **Coraline-core is the back-end library of the Coraline Project**
 
-**If you are searching for the front-end client library, please look at:** [Coraline-client](https://github.com/CamiloTD/coraline-client)
+**If you are searching for the front-end client library, please look at:** [coraline-client](https://github.com/CamiloTD/coraline-client)
 
 ### About this:
 This repository is not *"batteries included"*, that means its not made for creating coralines by itself, if you want to create interactive content, and not to contribute to **coraline-core** you may want to see: [coraline-cli](https://github.com/CamiloTD/coraline-cli)
