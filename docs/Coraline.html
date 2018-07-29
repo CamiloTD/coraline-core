@@ -1,0 +1,3036 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Class: Coraline</title>
+    
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <script src="scripts/jquery.min.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href="https://fonts.googleapis.com/css?family=Libre+Franklin:400,700" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/main.css">
+    
+    
+    <script>
+    var config = {"monospaceLinks":false,"cleverLinks":false,"applicationName":"coraline-core","linenums":true,"default":{}};
+    </script>
+    
+
+    
+</head>
+<body>
+<div id="wrap" class="clearfix">
+    
+<div class="navigation">
+    <h3 class="applicationName"><a href="index.html">coraline-core</a></h3>
+    <button id="menuToggle" class="btn btn-link btn-lg menu-toggle">
+        <span class="glyphicon glyphicon-menu-hamburger"></span>
+    </button>
+    <div class="search">
+        <input id="search" type="text" class="form-control input-md" placeholder="Search...">
+    </div>
+    <ul class="list">
+    
+        <li class="item" data-name="Client">
+            <span class="title  ">
+                
+                <a href="Client.html">Client</a>
+            </span>
+            <ul class="members itemMembers">
+            
+            <span class="subtitle">Members</span>
+            
+                <li class="parent " data-name="Client#id"><a href="Client.html#id">id</a></li>
+            
+                <li class="parent " data-name="Client#sock"><a href="Client.html#sock">sock</a></li>
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            </ul>
+            <ul class="events itemMembers">
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="Coraline">
+            <span class="title  ">
+                
+                <a href="Coraline.html">Coraline</a>
+            </span>
+            <ul class="members itemMembers">
+            
+            <span class="subtitle">Members</span>
+            
+                <li class="parent " data-name="Coraline#clients"><a href="Coraline.html#clients">clients</a></li>
+            
+                <li class="parent " data-name="Coraline#id"><a href="Coraline.html#id">id</a></li>
+            
+                <li class="parent " data-name="Coraline#iid"><a href="Coraline.html#iid">iid</a></li>
+            
+                <li class="parent " data-name="Coraline#master"><a href="Coraline.html#master">master</a></li>
+            
+                <li class="parent " data-name="Coraline#max_clients"><a href="Coraline.html#max_clients">max_clients</a></li>
+            
+                <li class="parent " data-name="Coraline#name"><a href="Coraline.html#name">name</a></li>
+            
+                <li class="parent " data-name="Coraline#password"><a href="Coraline.html#password">password</a></li>
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            <span class="subtitle">Methods</span>
+            
+                <li class="parent  " data-name="Coraline#addClient"><a href="Coraline.html#addClient">addClient</a></li>
+            
+                <li class="parent  " data-name="Coraline#broadcast"><a href="Coraline.html#broadcast">broadcast</a></li>
+            
+                <li class="parent  " data-name="Coraline#broadcastMessage"><a href="Coraline.html#broadcastMessage">broadcastMessage</a></li>
+            
+                <li class="parent  " data-name="Coraline#getClient"><a href="Coraline.html#getClient">getClient</a></li>
+            
+                <li class="parent  " data-name="Coraline#hasClient"><a href="Coraline.html#hasClient">hasClient</a></li>
+            
+                <li class="parent  " data-name="Coraline#isFull"><a href="Coraline.html#isFull">isFull</a></li>
+            
+                <li class="parent  " data-name="Coraline#removeClient"><a href="Coraline.html#removeClient">removeClient</a></li>
+            
+                <li class="parent  " data-name="Coraline#resolveQuery"><a href="Coraline.html#resolveQuery">resolveQuery</a></li>
+            
+                <li class="parent  " data-name="Coraline#resolveQueryTo"><a href="Coraline.html#resolveQueryTo">resolveQueryTo</a></li>
+            
+                <li class="parent  " data-name="Coraline#sendMessage"><a href="Coraline.html#sendMessage">sendMessage</a></li>
+            
+                <li class="parent  " data-name="Coraline#sendMessageTo"><a href="Coraline.html#sendMessageTo">sendMessageTo</a></li>
+            
+                <li class="parent  " data-name="Coraline#sendQuery"><a href="Coraline.html#sendQuery">sendQuery</a></li>
+            
+                <li class="parent  " data-name="Coraline#sendQueryTo"><a href="Coraline.html#sendQueryTo">sendQueryTo</a></li>
+            
+                <li class="parent  " data-name="Coraline#toObject"><a href="Coraline.html#toObject">toObject</a></li>
+            
+            </ul>
+            <ul class="events itemMembers">
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="Server">
+            <span class="title  ">
+                
+                <a href="Server.html">Server</a>
+            </span>
+            <ul class="members itemMembers">
+            
+            <span class="subtitle">Members</span>
+            
+                <li class="parent " data-name="Server#coralines"><a href="Server.html#coralines">coralines</a></li>
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            <span class="subtitle">Methods</span>
+            
+                <li class="parent  " data-name="Server#createCoraline"><a href="Server.html#createCoraline">createCoraline</a></li>
+            
+                <li class="parent  " data-name="Server#existsCoraline"><a href="Server.html#existsCoraline">existsCoraline</a></li>
+            
+                <li class="parent  " data-name="Server#getCoraline"><a href="Server.html#getCoraline">getCoraline</a></li>
+            
+                <li class="parent  " data-name="Server#getCoralineFor"><a href="Server.html#getCoralineFor">getCoralineFor</a></li>
+            
+                <li class="parent  " data-name="Server#getFreeID"><a href="Server.html#getFreeID">getFreeID</a></li>
+            
+                <li class="parent  " data-name="Server#removeCoraline"><a href="Server.html#removeCoraline">removeCoraline</a></li>
+            
+            </ul>
+            <ul class="events itemMembers">
+            
+            </ul>
+        </li>
+    
+    </ul>
+</div>
+    <div class="main">
+        <h1 class="page-title" data-filename="Coraline.html">Class: Coraline</h1>
+        
+
+
+
+<section>
+    
+<header>
+    <div class="header content-size">
+        <h2>Coraline
+        </h2>
+        
+            <div class="class-description">Main Coraline class, represents a Coraline</div>
+        
+    </div>
+</header>  
+
+<article class="content-size">
+    <div class="container-overview">
+    
+    
+    
+        
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="Coraline">
+            <a class="share-icon" href="#Coraline"><span class="glyphicon glyphicon-link"></span></a>
+            <span class="">
+                new Coraline
+            </span>
+            <span class="signature">(master, config)</span>
+            
+            
+            
+            
+        </h4>
+    
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>master</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Socket</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                Administrator Socket</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>config</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                Configuration Object
+                
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>max_clients</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                Max number of clients allowed</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>name</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                The name of the Coraline</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>password</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                Security password</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                Internal Coraline reference ID</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+            </td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        <h3 class="subsection-title">Members</h3>
+        
+        <dl class="list-members">
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="clients">
+            <a class="share-icon" href="#clients"><span class="glyphicon glyphicon-link"></span></a>
+            <span class="">clients</span>
+            <span class="type-signature type">Object</span>
+            
+            
+            
+            
+        </h4>
+    </div>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Client container, contains all Client objects
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="id">
+            <a class="share-icon" href="#id"><span class="glyphicon glyphicon-link"></span></a>
+            <span class="">id</span>
+            <span class="type-signature type">number</span>
+            
+            
+            
+            
+        </h4>
+    </div>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Reference ID
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="iid">
+            <a class="share-icon" href="#iid"><span class="glyphicon glyphicon-link"></span></a>
+            <span class="">iid</span>
+            <span class="type-signature type">number</span>
+            
+            
+            
+            
+        </h4>
+    </div>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Client ID counter, increases by 1 each time a client connects
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="master">
+            <a class="share-icon" href="#master"><span class="glyphicon glyphicon-link"></span></a>
+            <span class="">master</span>
+            <span class="type-signature type">Socket</span>
+            
+            
+            
+            
+        </h4>
+    </div>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Administrator SocketIO Connection
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="max_clients">
+            <a class="share-icon" href="#max_clients"><span class="glyphicon glyphicon-link"></span></a>
+            <span class="">max_clients</span>
+            <span class="type-signature type">number</span>
+            
+            
+            
+            
+        </h4>
+    </div>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Maximum number of clients allowed, default: <b>Infinity</b>
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="name">
+            <a class="share-icon" href="#name"><span class="glyphicon glyphicon-link"></span></a>
+            <span class="">name</span>
+            <span class="type-signature type">String</span>
+            
+            
+            
+            
+        </h4>
+    </div>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Public name
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="password">
+            <a class="share-icon" href="#password"><span class="glyphicon glyphicon-link"></span></a>
+            <span class="">password</span>
+            <span class="type-signature type">String</span>
+            
+            
+            
+            
+        </h4>
+    </div>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Security password for incoming connections
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        </dl>
+    
+    
+    
+        <h3 class="subsection-title">Methods</h3>
+        
+        <dl class="list-methods">
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="addClient">
+            <a class="share-icon" href="#addClient"><span class="glyphicon glyphicon-link"></span></a>
+            <span class="">
+                addClient
+            </span>
+            <span class="signature">(sock)</span>
+            
+            
+            
+            
+        </h4>
+    
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Creates and add a client to the client pool
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>sock</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Socket</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                The client sock</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+
+
+
+Client
+
+
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="broadcast">
+            <a class="share-icon" href="#broadcast"><span class="glyphicon glyphicon-link"></span></a>
+            <span class="">
+                broadcast
+            </span>
+            <span class="signature">(signal)</span>
+            
+            
+            
+            
+        </h4>
+    
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Broadcasts a <b>signal</b> to all clients
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>signal</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                    
+                        
+                    
+                
+                Signal to emit</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>...args</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Any</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                    
+                        
+                    
+                        <span class="repeatable">repeatable</span>
+                    
+                
+                Arguments to send</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+
+
+
+this
+
+
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="broadcastMessage">
+            <a class="share-icon" href="#broadcastMessage"><span class="glyphicon glyphicon-link"></span></a>
+            <span class="">
+                broadcastMessage
+            </span>
+            <span class="signature">(signal)</span>
+            
+            
+            
+            
+        </h4>
+    
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Broadcasts a <b>message</b> to all clients
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>signal</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                    
+                        
+                    
+                
+                Signal to emit</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>...args</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Any</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                    
+                        
+                    
+                        <span class="repeatable">repeatable</span>
+                    
+                
+                Arguments to send</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+
+
+
+this
+
+
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="getClient">
+            <a class="share-icon" href="#getClient"><span class="glyphicon glyphicon-link"></span></a>
+            <span class="">
+                getClient
+            </span>
+            <span class="signature">(id)</span>
+            
+            
+            
+            
+        </h4>
+    
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Get client by id
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                The client id</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+
+
+
+Client
+
+
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="hasClient">
+            <a class="share-icon" href="#hasClient"><span class="glyphicon glyphicon-link"></span></a>
+            <span class="">
+                hasClient
+            </span>
+            <span class="signature">(id)</span>
+            
+            
+            
+            
+        </h4>
+    
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Checks if there is any client with the specified id
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                The client id</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+
+
+
+Boolean
+
+
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="isFull">
+            <a class="share-icon" href="#isFull"><span class="glyphicon glyphicon-link"></span></a>
+            <span class="">
+                isFull
+            </span>
+            <span class="signature">()</span>
+            
+            
+            
+            
+        </h4>
+    
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Checks if the coraline is not able to receive more connections
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+
+
+
+Boolean
+
+
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="removeClient">
+            <a class="share-icon" href="#removeClient"><span class="glyphicon glyphicon-link"></span></a>
+            <span class="">
+                removeClient
+            </span>
+            <span class="signature">(id)</span>
+            
+            
+            
+            
+        </h4>
+    
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Removes a client from the pool
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                The client id</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+
+
+
+this
+
+
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="resolveQuery">
+            <a class="share-icon" href="#resolveQuery"><span class="glyphicon glyphicon-link"></span></a>
+            <span class="">
+                resolveQuery
+            </span>
+            <span class="signature">(src, iid)</span>
+            
+            
+            
+            
+        </h4>
+    
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Resolves a client query made by a master
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>src</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                    
+                        
+                    
+                
+                Client ID</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>iid</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                    
+                        
+                    
+                
+                Query ID</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>...args</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Any</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                    
+                        
+                    
+                        <span class="repeatable">repeatable</span>
+                    
+                
+                Arguments to send</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+
+
+
+this
+
+
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="resolveQueryTo">
+            <a class="share-icon" href="#resolveQueryTo"><span class="glyphicon glyphicon-link"></span></a>
+            <span class="">
+                resolveQueryTo
+            </span>
+            <span class="signature">(id, iid)</span>
+            
+            
+            
+            
+        </h4>
+    
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Resolves a master query made by a client
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                    
+                        
+                    
+                
+                Client ID</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>iid</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                    
+                        
+                    
+                
+                Query ID</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>...args</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Any</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                    
+                        
+                    
+                        <span class="repeatable">repeatable</span>
+                    
+                
+                Arguments to send</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+
+
+
+this
+
+
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="sendMessage">
+            <a class="share-icon" href="#sendMessage"><span class="glyphicon glyphicon-link"></span></a>
+            <span class="">
+                sendMessage
+            </span>
+            <span class="signature">(id, signal)</span>
+            
+            
+            
+            
+        </h4>
+    
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Sends a client message to the master
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                    
+                        
+                    
+                
+                Client ID</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>signal</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                    
+                        
+                    
+                
+                Signal to emit</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>...args</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Any</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                    
+                        
+                    
+                        <span class="repeatable">repeatable</span>
+                    
+                
+                Arguments to send</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+
+
+
+this
+
+
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="sendMessageTo">
+            <a class="share-icon" href="#sendMessageTo"><span class="glyphicon glyphicon-link"></span></a>
+            <span class="">
+                sendMessageTo
+            </span>
+            <span class="signature">(id, signal)</span>
+            
+            
+            
+            
+        </h4>
+    
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Sends a master message to a client
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                    
+                        
+                    
+                
+                Client ID</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>signal</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                    
+                        
+                    
+                
+                Signal to emit</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>...args</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Any</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                    
+                        
+                    
+                        <span class="repeatable">repeatable</span>
+                    
+                
+                Arguments to send</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+
+
+
+this
+
+
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="sendQuery">
+            <a class="share-icon" href="#sendQuery"><span class="glyphicon glyphicon-link"></span></a>
+            <span class="">
+                sendQuery
+            </span>
+            <span class="signature">(id, iid, signal)</span>
+            
+            
+            
+            
+        </h4>
+    
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Sends a client query to the master
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                    
+                        
+                    
+                
+                Client ID</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>iid</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                    
+                        
+                    
+                
+                Query ID</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>signal</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                    
+                        
+                    
+                
+                Signal to emit</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>...args</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Any</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                    
+                        
+                    
+                        <span class="repeatable">repeatable</span>
+                    
+                
+                Arguments to send</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+
+
+
+this
+
+
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="sendQueryTo">
+            <a class="share-icon" href="#sendQueryTo"><span class="glyphicon glyphicon-link"></span></a>
+            <span class="">
+                sendQueryTo
+            </span>
+            <span class="signature">(id, iid, signal)</span>
+            
+            
+            
+            
+        </h4>
+    
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Sends a master query to a client
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                    
+                        
+                    
+                
+                Client ID</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>iid</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                    
+                        
+                    
+                
+                Query ID</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>signal</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                    
+                        
+                    
+                
+                Signal to emit</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>...args</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Any</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                    
+                        
+                    
+                        <span class="repeatable">repeatable</span>
+                    
+                
+                Arguments to send</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+
+
+
+this
+
+
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="toObject">
+            <a class="share-icon" href="#toObject"><span class="glyphicon glyphicon-link"></span></a>
+            <span class="">
+                toObject
+            </span>
+            <span class="signature">()</span>
+            
+            
+            
+            
+        </h4>
+    
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Returns an object with public info about the coraline
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+
+
+
+Object
+
+
+    
+    
+    
+</dd>
+
+        </dl>
+    
+    
+    
+    
+    
+
+    
+</article>
+
+</section>  
+
+
+
+
+
+        
+
+        <footer class="content-size">
+            <div class="footer">
+                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sat Jul 28 2018 22:07:19 GMT-0500 (GMT-05:00)
+            </div>
+        </footer>
+    </div>
+</div>
+<script>prettyPrint();</script>
+<script src="scripts/main.js"></script>
+</body>
+</html>

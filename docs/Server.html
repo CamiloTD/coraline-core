@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Class: Server</title>
+    
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <script src="scripts/jquery.min.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href="https://fonts.googleapis.com/css?family=Libre+Franklin:400,700" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/main.css">
+    
+    
+    <script>
+    var config = {"monospaceLinks":false,"cleverLinks":false,"applicationName":"coraline-core","linenums":true,"default":{}};
+    </script>
+    
+
+    
+</head>
+<body>
+<div id="wrap" class="clearfix">
+    
+<div class="navigation">
+    <h3 class="applicationName"><a href="index.html">coraline-core</a></h3>
+    <button id="menuToggle" class="btn btn-link btn-lg menu-toggle">
+        <span class="glyphicon glyphicon-menu-hamburger"></span>
+    </button>
+    <div class="search">
+        <input id="search" type="text" class="form-control input-md" placeholder="Search...">
+    </div>
+    <ul class="list">
+    
+        <li class="item" data-name="Client">
+            <span class="title  ">
+                
+                <a href="Client.html">Client</a>
+            </span>
+            <ul class="members itemMembers">
+            
+            <span class="subtitle">Members</span>
+            
+                <li class="parent " data-name="Client#id"><a href="Client.html#id">id</a></li>
+            
+                <li class="parent " data-name="Client#sock"><a href="Client.html#sock">sock</a></li>
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            </ul>
+            <ul class="events itemMembers">
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="Coraline">
+            <span class="title  ">
+                
+                <a href="Coraline.html">Coraline</a>
+            </span>
+            <ul class="members itemMembers">
+            
+            <span class="subtitle">Members</span>
+            
+                <li class="parent " data-name="Coraline#clients"><a href="Coraline.html#clients">clients</a></li>
+            
+                <li class="parent " data-name="Coraline#id"><a href="Coraline.html#id">id</a></li>
+            
+                <li class="parent " data-name="Coraline#iid"><a href="Coraline.html#iid">iid</a></li>
+            
+                <li class="parent " data-name="Coraline#master"><a href="Coraline.html#master">master</a></li>
+            
+                <li class="parent " data-name="Coraline#max_clients"><a href="Coraline.html#max_clients">max_clients</a></li>
+            
+                <li class="parent " data-name="Coraline#name"><a href="Coraline.html#name">name</a></li>
+            
+                <li class="parent " data-name="Coraline#password"><a href="Coraline.html#password">password</a></li>
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            <span class="subtitle">Methods</span>
+            
+                <li class="parent  " data-name="Coraline#addClient"><a href="Coraline.html#addClient">addClient</a></li>
+            
+                <li class="parent  " data-name="Coraline#broadcast"><a href="Coraline.html#broadcast">broadcast</a></li>
+            
+                <li class="parent  " data-name="Coraline#broadcastMessage"><a href="Coraline.html#broadcastMessage">broadcastMessage</a></li>
+            
+                <li class="parent  " data-name="Coraline#getClient"><a href="Coraline.html#getClient">getClient</a></li>
+            
+                <li class="parent  " data-name="Coraline#hasClient"><a href="Coraline.html#hasClient">hasClient</a></li>
+            
+                <li class="parent  " data-name="Coraline#isFull"><a href="Coraline.html#isFull">isFull</a></li>
+            
+                <li class="parent  " data-name="Coraline#removeClient"><a href="Coraline.html#removeClient">removeClient</a></li>
+            
+                <li class="parent  " data-name="Coraline#resolveQuery"><a href="Coraline.html#resolveQuery">resolveQuery</a></li>
+            
+                <li class="parent  " data-name="Coraline#resolveQueryTo"><a href="Coraline.html#resolveQueryTo">resolveQueryTo</a></li>
+            
+                <li class="parent  " data-name="Coraline#sendMessage"><a href="Coraline.html#sendMessage">sendMessage</a></li>
+            
+                <li class="parent  " data-name="Coraline#sendMessageTo"><a href="Coraline.html#sendMessageTo">sendMessageTo</a></li>
+            
+                <li class="parent  " data-name="Coraline#sendQuery"><a href="Coraline.html#sendQuery">sendQuery</a></li>
+            
+                <li class="parent  " data-name="Coraline#sendQueryTo"><a href="Coraline.html#sendQueryTo">sendQueryTo</a></li>
+            
+                <li class="parent  " data-name="Coraline#toObject"><a href="Coraline.html#toObject">toObject</a></li>
+            
+            </ul>
+            <ul class="events itemMembers">
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="Server">
+            <span class="title  ">
+                
+                <a href="Server.html">Server</a>
+            </span>
+            <ul class="members itemMembers">
+            
+            <span class="subtitle">Members</span>
+            
+                <li class="parent " data-name="Server#coralines"><a href="Server.html#coralines">coralines</a></li>
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            <span class="subtitle">Methods</span>
+            
+                <li class="parent  " data-name="Server#createCoraline"><a href="Server.html#createCoraline">createCoraline</a></li>
+            
+                <li class="parent  " data-name="Server#existsCoraline"><a href="Server.html#existsCoraline">existsCoraline</a></li>
+            
+                <li class="parent  " data-name="Server#getCoraline"><a href="Server.html#getCoraline">getCoraline</a></li>
+            
+                <li class="parent  " data-name="Server#getCoralineFor"><a href="Server.html#getCoralineFor">getCoralineFor</a></li>
+            
+                <li class="parent  " data-name="Server#getFreeID"><a href="Server.html#getFreeID">getFreeID</a></li>
+            
+                <li class="parent  " data-name="Server#removeCoraline"><a href="Server.html#removeCoraline">removeCoraline</a></li>
+            
+            </ul>
+            <ul class="events itemMembers">
+            
+            </ul>
+        </li>
+    
+    </ul>
+</div>
+    <div class="main">
+        <h1 class="page-title" data-filename="Server.html">Class: Server</h1>
+        
+
+
+
+<section>
+    
+<header>
+    <div class="header content-size">
+        <h2>Server
+        </h2>
+        
+            <div class="class-description">Server class, this class handles all coralines</div>
+        
+    </div>
+</header>  
+
+<article class="content-size">
+    <div class="container-overview">
+    
+    
+    
+        
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="Server">
+            <a class="share-icon" href="#Server"><span class="glyphicon glyphicon-link"></span></a>
+            <span class="">
+                new Server
+            </span>
+            <span class="signature">(config)</span>
+            
+            
+            
+            
+        </h4>
+    
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>config</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                Configuration Object</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        <h3 class="subsection-title">Members</h3>
+        
+        <dl class="list-members">
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="coralines">
+            <a class="share-icon" href="#coralines"><span class="glyphicon glyphicon-link"></span></a>
+            <span class="">coralines</span>
+            
+            
+            
+            
+            
+        </h4>
+    </div>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Pair (id|coraline) object that will contains the coralines
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        </dl>
+    
+    
+    
+        <h3 class="subsection-title">Methods</h3>
+        
+        <dl class="list-methods">
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="createCoraline">
+            <a class="share-icon" href="#createCoraline"><span class="glyphicon glyphicon-link"></span></a>
+            <span class="">
+                createCoraline
+            </span>
+            <span class="signature">(master, config)</span>
+            
+            
+            
+            
+        </h4>
+    
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Creates a Coraline with a random ID
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>master</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Socket</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                Coraline administrator socket, that will act as master</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>config</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                Coraline Configuration Object</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+
+
+
+Coraline
+
+
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="existsCoraline">
+            <a class="share-icon" href="#existsCoraline"><span class="glyphicon glyphicon-link"></span></a>
+            <span class="">
+                existsCoraline
+            </span>
+            <span class="signature">(id)</span>
+            
+            
+            
+            
+        </h4>
+    
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Checks if there is any coraline registered with that ID
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                The id of the coraline you'd like to check</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+
+
+
+Boolean
+
+
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="getCoraline">
+            <a class="share-icon" href="#getCoraline"><span class="glyphicon glyphicon-link"></span></a>
+            <span class="">
+                getCoraline
+            </span>
+            <span class="signature">(id)</span>
+            
+            
+            
+            
+        </h4>
+    
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Obtains a coraline by its id
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                The id of the coraline you'd like to check</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+
+
+
+Coraline
+
+
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="getCoralineFor">
+            <a class="share-icon" href="#getCoralineFor"><span class="glyphicon glyphicon-link"></span></a>
+            <span class="">
+                getCoralineFor
+            </span>
+            <span class="signature">(id)</span>
+            
+            
+            
+            
+        </h4>
+    
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Obtains a coraline by its master
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Socket</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                The socket of the coraline you'd like to check</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+
+
+
+Coraline
+
+
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="getFreeID">
+            <a class="share-icon" href="#getFreeID"><span class="glyphicon glyphicon-link"></span></a>
+            <span class="">
+                getFreeID
+            </span>
+            <span class="signature">()</span>
+            
+            
+            
+            
+        </h4>
+    
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Obtains a free ID for new coralines
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+
+
+
+number
+
+
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="removeCoraline">
+            <a class="share-icon" href="#removeCoraline"><span class="glyphicon glyphicon-link"></span></a>
+            <span class="">
+                removeCoraline
+            </span>
+            <span class="signature">(id)</span>
+            
+            
+            
+            
+        </h4>
+    
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Removes an existing coraline
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                The id of the coraline you'd like to remove</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+
+
+
+this
+
+
+    
+    
+    
+</dd>
+
+        </dl>
+    
+    
+    
+    
+    
+
+    
+</article>
+
+</section>  
+
+
+
+
+
+        
+
+        <footer class="content-size">
+            <div class="footer">
+                Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sat Jul 28 2018 22:07:19 GMT-0500 (GMT-05:00)
+            </div>
+        </footer>
+    </div>
+</div>
+<script>prettyPrint();</script>
+<script src="scripts/main.js"></script>
+</body>
+</html>

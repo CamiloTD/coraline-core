@@ -7,7 +7,7 @@
 
 	"opts": {
 		"encoding": "utf8",
-		"destination": "./jsdoc/",
+		"destination": "./docs/",
 		"recurse": true,
 		"template": "./node_modules/@pixi/jsdoc-template"
 	},
