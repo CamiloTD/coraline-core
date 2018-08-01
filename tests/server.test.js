@@ -5,7 +5,11 @@ const Client = require('socket.io-client');
 const URL = 'http://localhost:8000';
 
 const PASSWORD = 'C0ral1n3';
+<<<<<<< HEAD
 const CONFIG = { password: PASSWORD };
+=======
+const CONFIG = { password: "C0ral1n3" };
+>>>>>>> parent of 9ff2301... Password Requirements removed
 
 io.listen(8000);
 
@@ -13,6 +17,26 @@ let server = Server(io, CONFIG);
 
 // Authentication
 	// Create
+		test('/create: INVALID_PASSWORD', (done) => {
+			let client = Client(URL);
+			client.emit('create', 'bad_password');
+
+			client.once('create-failed', (reason) => {
+				if(reason === "INVALID_PASSWORD") {
+					client.destroy();
+					return done();
+				}
+
+				client.destroy();
+				throw "Incorrect Reason: " + reason;
+			});
+
+			client.once('create-success', (id) => {
+				client.destroy();
+				throw "Logged In...";
+			});
+		});
+
 		test('/create: INVALID_CONFIG', (done) => {
 			let client = Client(URL);
 			client.emit('create', 'String');
