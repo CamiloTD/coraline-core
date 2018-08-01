@@ -5,11 +5,7 @@ const Client = require('socket.io-client');
 const URL = 'http://localhost:8000';
 
 const PASSWORD = 'C0ral1n3';
-<<<<<<< HEAD
 const CONFIG = { password: "C0ral1n3" };
-=======
-const CONFIG = {};
->>>>>>> parent of 5cf1b2e... Removed Password Requirements
 
 io.listen(8000);
 

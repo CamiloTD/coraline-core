@@ -1,6 +1,6 @@
 {
   "name": "coraline-core",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "",
   "main": "index.js",
   "directories": {
@@ -17,7 +17,7 @@
     "jsdoc": "^3.5.5"
   },
   "scripts": {
-    "test": "jest --forceExit",
+    "test": "node_modules/.bin/jest --forceExit",
     "generate-docs": "node_modules/.bin/jsdoc -c jsdoc.json"
   },
   "repository": {
@@ -29,5 +29,8 @@
   "bugs": {
     "url": "https://github.com/CamiloTD/coraline/issues"
   },
-  "homepage": "https://github.com/CamiloTD/coraline#readme"
+  "homepage": "https://github.com/CamiloTD/coraline#readme",
+  "jest": {
+    "testURL": "http://localhost/"
+  }
 }
