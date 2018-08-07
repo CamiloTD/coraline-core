@@ -41,4 +41,4 @@ You can colaborate to the project by donating some pennies to this wallets, we a
 
 **Bitcoin:** 1GRLN4C8U7TezPLa6cLHHdfSpSF3qHNuR5
 
-## [Esp](/es/README.md)
+## [Español](/es/README.md)
