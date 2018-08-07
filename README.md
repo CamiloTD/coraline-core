@@ -40,3 +40,5 @@ The documentation will be generated in **./jsdoc** folder
 You can colaborate to the project by donating some pennies to this wallets, we appreciate your collaboration <3
 
 **Bitcoin:** 1GRLN4C8U7TezPLa6cLHHdfSpSF3qHNuR5
+
+## [Español](/es/README.md)
