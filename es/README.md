@@ -5,7 +5,7 @@
 **Si estas buscando por la libreria front-end, por favor buscala en:** [coraline-client](https://github.com/CamiloTD/coraline-client)
 
 ### Sobre esto:
-Este repósitorio no tiene *"Baterias incluidas"*, esto sifnifica que no esto hecho para crear coralines por el mismo, si tu quieres crear contenido interactivo, y no contribuir a **coraline-core** te podria ser util mirar aqui: [coraline-cli](https://github.com/CamiloTD/coraline-cli)
+Este repósitorio no tiene *"Baterias incluidas"*, esto sifnifica que no esta hecho para crear coralines por el mismo, si tu quieres crear contenido interactivo, y no contribuir a **coraline-core** te podria ser util mirar aqui: [coraline-cli](https://github.com/CamiloTD/coraline-cli)
 
 **Instalacion:**
 ```batch
